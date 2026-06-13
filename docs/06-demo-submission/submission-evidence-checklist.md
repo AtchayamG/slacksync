@@ -13,7 +13,7 @@
 | Public repository | `https://github.com/AtchayamG/slacksync` | PASS | Codex | GitHub reports visibility `PUBLIC`, default branch `main` |
 | Open-source license | `LICENSE` | PASS | Codex | GitHub detects MIT License |
 | Architecture diagram | `assets/diagrams/architecture.png` and `.svg` | PASS | Codex | Matches Slack -> tunnel -> FastAPI -> Maestro -> MCP/RTS -> agents -> web console |
-| Demo video under 3 minutes | public video URL | TODO | Codex/user | Verify duration and playback |
+| Demo video under 3 minutes | `https://github.com/AtchayamG/slacksync/releases/download/demo-v1/slacksync-demo.mp4` | PASS | Codex | MP4 is 99 seconds with narration; release asset is public |
 | Project uses Agent Builder | Installed Slack app plus `/sync` agent command | PASS | Codex | Working command in sandbox with app response |
 | Project uses MCP | `services/api/app/integrations/mcp_context.py` | PASS | Codex | API result includes GitHub/Jira MCP evidence and tests assert it |
 | Project uses RTS API | `services/api/app/integrations/rts_search.py` | PASS | Codex | API result includes `#dev-agent-ops` RTS evidence and tests assert it |

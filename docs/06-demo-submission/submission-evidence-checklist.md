@@ -10,8 +10,8 @@
 | Slack sandbox judge access | Invites to `slackhack@salesforce.com`, `testing@devpost.com` | PASS | Codex | Slack invite confirmation: both invited as coworkers, expires in 30 days |
 | Slack app installed | App ID `A0BABHV4D8E` in SlackSync Sandbox | PASS | Codex | `/sync review PR #42` returned SlackSync ephemeral response at 2:15 AM IST |
 | Slack slash command webhook | `/slack/commands` through `https://slacksync-atchayam.loca.lt` | PASS | Codex | `/sync status` returned `2 recent runs; 1 failure in feature/auth.` |
-| Public repository | GitHub URL | TODO | Codex | Logged-out check |
-| Open-source license | `LICENSE` | TODO | Codex | Visible in repo |
+| Public repository | `https://github.com/AtchayamG/slacksync` | PASS | Codex | GitHub reports visibility `PUBLIC`, default branch `main` |
+| Open-source license | `LICENSE` | PASS | Codex | GitHub detects MIT License |
 | Architecture diagram | `assets/diagrams/architecture.png` and `.svg` | PASS | Codex | Matches Slack -> tunnel -> FastAPI -> Maestro -> MCP/RTS -> agents -> web console |
 | Demo video under 3 minutes | public video URL | TODO | Codex/user | Verify duration and playback |
 | Project uses Agent Builder | Installed Slack app plus `/sync` agent command | PASS | Codex | Working command in sandbox with app response |

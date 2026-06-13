@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">SlackSync Architecture</title>
+  <desc id="desc">Architecture diagram showing Slack surfaces, public tunnel, FastAPI, Maestro router, MCP, Real-Time Search, specialist agents, and web console.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#07100d"/>
+      <stop offset="0.54" stop-color="#0b211b"/>
+      <stop offset="1" stop-color="#15110a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7ee0b3"/>
+      <stop offset="1" stop-color="#f1cf65"/>
+    </linearGradient>
+    <style>
+      .title{font:800 54px Inter,Segoe UI,sans-serif;fill:#eef7f2}
+      .subtitle{font:500 24px Inter,Segoe UI,sans-serif;fill:#b9cbc3}
+      .label{font:800 25px Inter,Segoe UI,sans-serif;fill:#eef7f2}
+      .body{font:500 18px Inter,Segoe UI,sans-serif;fill:#b9cbc3}
+      .chip{font:800 16px Inter,Segoe UI,sans-serif;fill:#07100d}
+      .box{fill:rgba(9,24,19,.88);stroke:#315849;stroke-width:2;rx:18}
+      .gold{stroke:#f1cf65}
+      .mint{stroke:#7ee0b3}
+      .line{stroke:#7ee0b3;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <path d="M0,0 L14,7 L0,14 Z" fill="#7ee0b3"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="44" y="44" width="1512" height="812" rx="30" fill="none" stroke="#243f37" stroke-width="2"/>
+  <text x="82" y="118" class="title">SlackSync Production Architecture</text>
+  <text x="84" y="160" class="subtitle">Slack Agent Builder app with MCP context, Real-Time Search evidence, and deterministic demo-safe agents.</text>
+
+  <rect x="86" y="238" width="285" height="166" class="box mint"/>
+  <text x="116" y="286" class="label">Slack Surfaces</text>
+  <text x="116" y="326" class="body">/sync slash command</text>
+  <text x="116" y="356" class="body">App responses in sandbox</text>
+  <text x="116" y="386" class="body">Judge access via invites</text>
+
+  <rect x="466" y="238" width="285" height="166" class="box gold"/>
+  <text x="496" y="286" class="label">Public Webhook</text>
+  <text x="496" y="326" class="body">HTTPS tunnel for demo</text>
+  <text x="496" y="356" class="body">Slack signature-ready</text>
+  <text x="496" y="386" class="body">Fast 200 response path</text>
+
+  <rect x="846" y="238" width="285" height="166" class="box mint"/>
+  <text x="876" y="286" class="label">FastAPI Core</text>
+  <text x="876" y="326" class="body">/slack/commands</text>
+  <text x="876" y="356" class="body">/api/commands</text>
+  <text x="876" y="386" class="body">Shared typed contracts</text>
+
+  <rect x="1226" y="238" width="285" height="166" class="box gold"/>
+  <text x="1256" y="286" class="label">Maestro Router</text>
+  <text x="1256" y="326" class="body">Intent parsing</text>
+  <text x="1256" y="356" class="body">Agent selection</text>
+  <text x="1256" y="386" class="body">Response shaping</text>
+
+  <path d="M371 321 H466" class="line"/>
+  <path d="M751 321 H846" class="line"/>
+  <path d="M1131 321 H1226" class="line"/>
+
+  <rect x="142" y="534" width="250" height="138" class="box"/>
+  <text x="172" y="580" class="label">MCP Context</text>
+  <text x="172" y="620" class="body">GitHub + Jira artifacts</text>
+  <text x="172" y="650" class="body">Attached to every result</text>
+
+  <rect x="472" y="534" width="250" height="138" class="box"/>
+  <text x="502" y="580" class="label">RTS Evidence</text>
+  <text x="502" y="620" class="body">Slack channel snippets</text>
+  <text x="502" y="650" class="body">Relevance scored context</text>
+
+  <rect x="802" y="514" width="360" height="178" class="box mint"/>
+  <text x="832" y="562" class="label">Specialist Agents</text>
+  <text x="832" y="602" class="body">Reviewer, Tester, Scribe, Watchdog</text>
+  <text x="832" y="632" class="body">Deterministic outputs for demo</text>
+  <text x="832" y="662" class="body">Extensible LLM/tool boundaries</text>
+
+  <rect x="1242" y="514" width="250" height="178" class="box gold"/>
+  <text x="1272" y="562" class="label">Web Console</text>
+  <text x="1272" y="602" class="body">React/Vite dashboard</text>
+  <text x="1272" y="632" class="body">Live API fallback</text>
+  <text x="1272" y="662" class="body">Submission demo surface</text>
+
+  <path d="M988 404 V514" class="line"/>
+  <path d="M1226 358 C1080 462 870 502 722 560" class="line"/>
+  <path d="M1226 372 C1030 500 630 520 392 585" class="line"/>
+  <path d="M1226 344 C1160 454 1160 532 1162 604 H1242" class="line"/>
+
+  <rect x="84" y="754" width="1428" height="54" rx="27" fill="url(#accent)"/>
+  <text x="126" y="790" class="chip">Verified: Slack app installed, /sync responds in sandbox, backend tests pass, public repo-ready license and docs included.</text>
+</svg>

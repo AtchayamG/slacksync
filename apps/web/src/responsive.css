@@ -1,0 +1,35 @@
+@media (max-width: 860px) {
+  .shell {
+    padding: 18px;
+  }
+
+  .hero,
+  .grid,
+  .lower {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    display: grid;
+    min-height: auto;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .metrics,
+  .tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .agent {
+    grid-template-columns: auto 1fr;
+  }
+
+  .agent b {
+    grid-column: 2;
+  }
+}

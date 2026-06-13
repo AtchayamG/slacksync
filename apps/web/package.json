@@ -1,0 +1,25 @@
+{
+  "name": "@slacksync/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -p tsconfig.json && vite build",
+    "test": "tsx src/viewModel.test.ts"
+  },
+  "dependencies": {
+    "@slacksync/contracts": "0.1.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^6.4.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.4"
+  }
+}

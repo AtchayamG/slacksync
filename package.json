@@ -1,0 +1,15 @@
+{
+  "name": "slacksync",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/web",
+    "packages/contracts"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @slacksync/web",
+    "build": "npm run build --workspace @slacksync/contracts && npm run build --workspace @slacksync/web",
+    "test": "npm run test --workspace @slacksync/contracts && npm run test --workspace @slacksync/web"
+  }
+}

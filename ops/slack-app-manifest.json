@@ -1,0 +1,48 @@
+{
+  "display_information": {
+    "name": "SlackSync",
+    "description": "Agent operations center for review, tests, docs, and CI triage.",
+    "background_color": "#0b1f18"
+  },
+  "features": {
+    "app_home": {
+      "home_tab_enabled": true,
+      "messages_tab_enabled": true,
+      "messages_tab_read_only_enabled": false
+    },
+    "bot_user": {
+      "display_name": "SlackSync",
+      "always_online": true
+    },
+    "slash_commands": [
+      {
+        "command": "/sync",
+        "url": "https://your-public-url.example/slack/commands",
+        "description": "Route engineering workflows to SlackSync agents.",
+        "usage_hint": "review PR #42 | tests path.py | docs changelog | status",
+        "should_escape": false
+      }
+    ]
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "app_mentions:read",
+        "channels:history",
+        "chat:write",
+        "commands",
+        "files:write",
+        "im:history",
+        "users:read"
+      ]
+    }
+  },
+  "settings": {
+    "interactivity": {
+      "is_enabled": false
+    },
+    "org_deploy_enabled": false,
+    "socket_mode_enabled": false,
+    "token_rotation_enabled": false
+  }
+}

@@ -1,0 +1,45 @@
+.timeline {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.timeline li {
+  padding-left: 8px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips span {
+  border: 1px solid rgba(126, 224, 179, 0.24);
+  border-radius: 999px;
+  padding: 8px 10px;
+  color: #d9fff0;
+  font-size: 0.85rem;
+}
+
+.evidence {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  margin-top: 18px;
+  border-top: 1px solid rgba(195, 233, 218, 0.14);
+  padding-top: 16px;
+}
+
+.evidence svg {
+  color: #f1cf65;
+}
+
+.evidence b {
+  color: #eef7f2;
+}
+
+.evidence p {
+  margin-bottom: 0;
+}

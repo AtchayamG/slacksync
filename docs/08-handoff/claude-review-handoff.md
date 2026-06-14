@@ -10,7 +10,7 @@ SlackSync is a Slack-native agent operations center for the Slack Agent Builder 
 
 - Working directory: `D:\Work\Codex\Hackathon Projects\Slack Agent`
 - Public repository: `https://github.com/AtchayamG/slacksync`
-- Latest pushed commit: `7001d8a Add Block Kit formatter, CI + Pages workflows, dashboard charts, standalone console, upgraded demo video, refreshed docs + YouTube URL`
+- Review instruction: pull latest `main` before reviewing. Product baseline commit: `7001d8a Add Block Kit formatter, CI + Pages workflows, dashboard charts, standalone console, upgraded demo video, refreshed docs + YouTube URL`
 - License: MIT
 - Devpost draft: `SlackSync`, draft ID `1049880-slacksync`
 - Slack sandbox: `https://slacksync-atchayam.enterprise.slack.com`
@@ -36,8 +36,8 @@ Latest results:
 - Frontend production build passed.
 - Contract and web view-model tests passed.
 - Backend tests: `15 passed in 0.58s`.
-- GitHub Actions CI run `27494987041`: success.
-- GitHub Pages workflow run `27495044194`: success.
+- Latest checked GitHub Actions CI run `27496753288`: success.
+- Latest checked GitHub Pages workflow run `27496753268`: success.
 - Secret-pattern scan returned no matches for Slack/OpenAI/GitHub token patterns or the sandbox password.
 
 ## Demo And Submission Artifacts

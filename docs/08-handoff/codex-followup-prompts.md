@@ -8,8 +8,8 @@ Finalize-review SlackSync for the Slack Agent Builder Challenge, but do not clic
 Work from:
 D:\Work\Codex\Hackathon Projects\Slack Agent
 
-Latest known good commit:
-7001d8a Add Block Kit formatter, CI + Pages workflows, dashboard charts, standalone console, upgraded demo video, refreshed docs + YouTube URL
+Review instruction:
+Pull latest `main` before reviewing. The stable product baseline is commit `7001d8a Add Block Kit formatter, CI + Pages workflows, dashboard charts, standalone console, upgraded demo video, refreshed docs + YouTube URL`; final handoff docs were refreshed after that.
 
 Public artifacts:
 - Repo: https://github.com/AtchayamG/slacksync
@@ -24,8 +24,8 @@ Known verification:
 - `npm run build` passed.
 - `npm run test` passed.
 - `C:\Users\Atchayam\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe -m pytest -q` passed with 15 tests.
-- GitHub Actions CI run 27494987041 succeeded.
-- GitHub Pages workflow run 27495044194 succeeded.
+- Latest checked GitHub Actions CI run 27496753288 succeeded.
+- Latest checked GitHub Pages workflow run 27496753268 succeeded.
 - Devpost Additional Info architecture upload was completed manually and the finalization page is visible.
 
 Your review checklist:

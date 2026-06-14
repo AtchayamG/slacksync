@@ -83,3 +83,5 @@ DONE: Devpost project details were saved with the YouTube URL `https://youtu.be/
 DONE: User manually uploaded `assets/diagrams/architecture.png` in Devpost Additional Info and saved it. Codex verified the Devpost finalization page is visible with the terms checkbox and `Submit project` button. Codex did not click final submit.
 
 NEXT: Final human or Claude review of the Devpost preview, then user-controlled final submit only if the preview is accurate and the terms checkbox is truthful.
+
+DONE: Refreshed final shared handoff docs, removed explicit judge emails from public docs, committed the handoff update, and pushed `main`. Fresh CI run `27496753288` and Pages run `27496753268` both succeeded.

@@ -1,86 +1,55 @@
-# Codex Follow-Up Prompts (post Claude review)
+# Final Review Prompt For Claude
 
-Claude upgraded the project on 2026-06-14. Below are copy-paste prompts for Codex
-to finish the remaining external/human steps, in order. Run them from
-`D:\Work\Codex\Hackathon Projects\Slack Agent`.
+Use this prompt for the last Claude pass before the user decides whether to submit.
 
-## What Claude changed (context for Codex)
+```text
+Finalize-review SlackSync for the Slack Agent Builder Challenge, but do not click final submit unless I explicitly authorize it in this Claude session after your review.
 
-- New: `services/api/app/slack/blockkit.py` (Block Kit formatter) + `tests/unit/slack/test_blockkit.py`.
-- New: `.github/workflows/ci.yml` (pytest + frontend build/test + secret scan) and `.github/workflows/pages.yml` (Pages deploy).
-- Edited: `services/api/app/maestro/router.py`, `services/api/app/main.py` (attach + return Block Kit blocks), `services/api/app/demo_data.py` (truthful proof state).
-- Edited: `apps/web/src/api.ts`, `apps/web/src/App.tsx`, `apps/web/vite.config.ts` (standalone-on-Pages, relative base).
-- Rewrote: `README.md`, `docs/06-demo-submission/devpost-submission-draft.md`.
-- Updated: evidence checklist + CTO log.
-- New video: `assets/demo-video/slacksync-demo-v2.mp4` (75s, 720p, captions).
-- Backend: `15 passed`. Frontend build verified on a clean checkout.
+Work from:
+D:\Work\Codex\Hackathon Projects\Slack Agent
 
-## Prompt 1 — Clean up temp files, verify, commit
+Latest known good commit:
+7001d8a Add Block Kit formatter, CI + Pages workflows, dashboard charts, standalone console, upgraded demo video, refreshed docs + YouTube URL
 
-```
-In the SlackSync repo: delete the temporary verification frames
-assets/demo-video/_check_frame_3.png, _check_frame_22.png, _check_frame_50.png,
-_check_frame_72.png, _check2_3.png, and _check2_72.png (do NOT commit them).
-Then run: npm install && npm run build && npm run test, and
-python -m pytest -q. All must pass. Then stage everything EXCEPT the _check
-frames and commit with message:
-"Add Block Kit formatter, CI + Pages workflows, standalone console, upgraded demo video, refreshed docs".
-Do not commit any secrets.
-```
+Public artifacts:
+- Repo: https://github.com/AtchayamG/slacksync
+- Pages console: https://atchayamg.github.io/slacksync/
+- YouTube demo: https://youtu.be/rHMgZBfL3PI
+- Slack sandbox: https://slacksync-atchayam.enterprise.slack.com
+- Architecture image in repo: assets/diagrams/architecture.png
+- Devpost draft: project 1049880-slacksync
 
-## Prompt 2 — Push and confirm CI
+Known verification:
+- `npm install` completed; npm reported 3 high severity audit findings.
+- `npm run build` passed.
+- `npm run test` passed.
+- `C:\Users\Atchayam\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe -m pytest -q` passed with 15 tests.
+- GitHub Actions CI run 27494987041 succeeded.
+- GitHub Pages workflow run 27495044194 succeeded.
+- Devpost Additional Info architecture upload was completed manually and the finalization page is visible.
 
-```
-Push main to https://github.com/AtchayamG/slacksync and report back the status of
-the CI and Pages GitHub Actions runs. If CI fails, show me the failing job log and
-fix it.
-```
+Your review checklist:
+1. Pull/inspect the latest repo state and confirm there are no uncommitted secrets or temp demo frames.
+2. Re-run build/tests if time permits. If anything fails, stop and show the log.
+3. Open the Pages console and verify it loads, the Review/Tests/Docs/Status tabs render, and the bar + donut charts are visible.
+4. Open the YouTube demo and confirm it is playable and under 3 minutes.
+5. Review the Devpost draft/preview for truthful claims only. It must use Track: New Slack Agent.
+6. Do not claim Slack Marketplace approval or Organizations-track eligibility.
+7. Do not put judge email addresses, secrets, tokens, passwords, or private account details in any public field.
+8. Confirm the architecture image is present in Additional Info.
+9. Leave final submit untouched unless I explicitly say: "Claude, final-submit SlackSync now."
 
-## Prompt 3 — Enable the public judge console (GitHub Pages)
-
-```
-In the GitHub repo settings for AtchayamG/slacksync, enable GitHub Pages with
-Source = GitHub Actions. Confirm the Pages workflow deploys and give me the live
-URL (expected https://atchayamg.github.io/slacksync/). Verify the console loads
-and the /sync tabs (Review, Tests, Docs, Status) all render.
-```
-
-## Prompt 4 — Publish the demo video to YouTube (human upload)
-
-The Devpost video field only accepts YouTube/Vimeo/Facebook/Youku, and the Chrome
-file picker was blocked for automation, so the upload is manual:
-
-```
-Upload this file to YouTube as an UNLISTED-or-PUBLIC video, title
-"SlackSync - Slack-native engineering agent operations center":
-D:\Work\Codex\Hackathon Projects\Slack Agent\assets\demo-video\slacksync-demo-v2.mp4
-Devpost requires the video to be public. Once it is public, give me the watch URL.
+Report back in this format:
+PASS:
+RISKS:
+MUST FIX BEFORE SUBMIT:
+OPTIONAL POLISH:
+FINAL SUBMIT READINESS:
 ```
 
-(After the user provides the URL, run Prompt 5.)
-
-## Prompt 5 — Record the YouTube URL in the repo
-
-```
-Set the demo video URL to <PASTE_YOUTUBE_URL>. Update:
-- docs/06-demo-submission/devpost-submission-draft.md (the "Demo video (YouTube)" line)
-- docs/06-demo-submission/submission-evidence-checklist.md (flip the YouTube row to PASS with the URL)
-Then commit and push.
-```
-
-## Prompt 6 — Devpost final assembly (human submit)
-
-```
-On the Devpost SlackSync project draft (1049880-slacksync): paste the description
-from docs/06-demo-submission/devpost-submission-draft.md, set the video URL to the
-YouTube link, upload assets/diagrams/architecture.png, set track = New Slack Agent,
-add the repo URL and the GitHub Pages URL, and the Slack sandbox URL with judge
-test note. Save as draft and show me the preview. DO NOT click final submit; leave
-that to the user after review.
-```
-
-## Guardrails (unchanged)
+## Guardrails
 
 - Do not final-submit Devpost without explicit user approval.
-- Do not claim Slack Marketplace approval / Organizations eligibility.
-- Do not commit secrets or the _check verification frames.
+- Do not claim Slack Marketplace approval or Organizations eligibility.
+- Do not commit secrets or `_*.png` verification frames.
+- Do not expose judge email addresses in public fields.

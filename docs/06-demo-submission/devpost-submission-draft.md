@@ -111,7 +111,7 @@ surface and the audit trail for agentic engineering workflows.
 
 - Slack sandbox: `https://slacksync-atchayam.enterprise.slack.com`
 - Slack App ID: `A0BABHV4D8E`
-- Judge invites sent to `slackhack@salesforce.com` and `testing@devpost.com`
+- Required judge accounts have been invited to the Slack sandbox
 - Public repository: `https://github.com/AtchayamG/slacksync` (MIT)
 - Architecture diagram: `assets/diagrams/architecture.png`
 - Demo video (YouTube): https://youtu.be/rHMgZBfL3PI

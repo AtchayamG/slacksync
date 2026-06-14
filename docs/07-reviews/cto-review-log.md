@@ -14,7 +14,7 @@ DONE: User completed payment method setup. Sandbox `SlackSync Sandbox` was provi
 
 NEXT: Invite judge accounts to sandbox, create/install Slack app, and capture proof for Devpost.
 
-DONE: Invited `slackhack@salesforce.com` and `testing@devpost.com` to SlackSync Sandbox as coworkers. Slack confirmation says invites expire in 30 days.
+DONE: Invited the required Devpost judge accounts to SlackSync Sandbox as coworkers. Slack confirmation says invites expire in 30 days.
 
 DONE: Created Slack app `SlackSync` in the sandbox, installed it, and verified `/sync review PR #42` from Slack `#general` returns a SlackSync app response through the FastAPI webhook.
 
@@ -67,3 +67,19 @@ NOTE: Temporary `_check_*.png` frames were written into `assets/demo-video/` dur
 NEXT (human/external): Upload `slacksync-demo-v2.mp4` to YouTube as Public and paste the URL into Devpost; enable GitHub Pages; upload the architecture diagram; final human Devpost submit.
 
 DONE: Rebuilt the "Live console for judges" video slide to feature the new dashboard analytics (agent-readiness bar chart and /sync command-mix donut), so the demo video now reflects the upgraded UI. Final video `assets/demo-video/slacksync-demo-v2.mp4`, 75.8s, 1280x720, no burned captions, crossfade transitions.
+
+## 2026-06-14 (finalization readiness)
+
+DONE: Verified the clean release path. `npm install` completed, `npm run build` passed, `npm run test` passed, and backend pytest reported `15 passed in 0.58s`. npm reported 3 high severity audit findings, but they did not block build/test.
+
+DONE: Removed temporary demo-video verification frames, reverted line-ending-only docs, ran a secret-pattern scan with no matches, committed `7001d8a`, and pushed `main` to `https://github.com/AtchayamG/slacksync`.
+
+DONE: GitHub Actions CI run `27494987041` succeeded. GitHub Pages was enabled with Source = GitHub Actions, Pages run `27495044194` succeeded, and the live judge console is available at `https://atchayamg.github.io/slacksync/`.
+
+DONE: Verified the live Pages console loads with title `SlackSync Console`; Review, Tests, Docs, and Status tabs update the command output; the agent-readiness bar chart and command-mix donut chart render.
+
+DONE: Devpost project details were saved with the YouTube URL `https://youtu.be/rHMgZBfL3PI`, public repo URL, GitHub Pages URL, Slack sandbox URL, and New Slack Agent track. Public copy was kept truthful and avoids Marketplace/Organizations overclaims.
+
+DONE: User manually uploaded `assets/diagrams/architecture.png` in Devpost Additional Info and saved it. Codex verified the Devpost finalization page is visible with the terms checkbox and `Submit project` button. Codex did not click final submit.
+
+NEXT: Final human or Claude review of the Devpost preview, then user-controlled final submit only if the preview is accurate and the terms checkbox is truthful.

@@ -1,8 +1,8 @@
 # Demo Script
 
-Current rendered artifact: `assets/demo-video/slacksync-demo.mp4`.
+Current rendered artifact: `assets/demo-video/slacksync-demo-v2.mp4`.
 
-Duration: 75.288 seconds.
+Duration: 75.8 seconds.
 
 Voice: Edge TTS `en-US-AndrewNeural`.
 
@@ -21,4 +21,6 @@ Renderer: `scripts/render_demo_video.py`.
 
 ## Upload Note
 
-Devpost requires a YouTube, Vimeo, Facebook Video, or Youku URL. The GitHub release video is only a backup proof asset, not accepted by the Devpost video field.
+Devpost video URL: https://youtu.be/rHMgZBfL3PI
+
+The GitHub release video is only a backup proof asset, not accepted by the Devpost video field.

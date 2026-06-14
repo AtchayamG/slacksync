@@ -10,13 +10,15 @@ SlackSync is a Slack-native agent operations center for the Slack Agent Builder 
 
 - Working directory: `D:\Work\Codex\Hackathon Projects\Slack Agent`
 - Public repository: `https://github.com/AtchayamG/slacksync`
-- Latest pushed commit: `bbd23b5 Polish UI and demo video proof`
+- Latest pushed commit: `7001d8a Add Block Kit formatter, CI + Pages workflows, dashboard charts, standalone console, upgraded demo video, refreshed docs + YouTube URL`
 - License: MIT
 - Devpost draft: `SlackSync`, draft ID `1049880-slacksync`
 - Slack sandbox: `https://slacksync-atchayam.enterprise.slack.com`
 - Slack app ID: `A0BABHV4D8E`
-- Judge invites sent: `slackhack@salesforce.com`, `testing@devpost.com`
+- Required judge accounts: invited to Slack sandbox
 - Current public tunnel: `https://slacksync-atchayam.loca.lt`
+- GitHub Pages console: `https://atchayamg.github.io/slacksync/`
+- YouTube demo: `https://youtu.be/rHMgZBfL3PI`
 
 ## Verified Commands
 
@@ -30,39 +32,40 @@ C:\Users\Atchayam\.cache\codex-runtimes\codex-primary-runtime\dependencies\pytho
 
 Latest results:
 
+- `npm install` completed. npm reported 3 high severity audit findings; build and tests still pass.
 - Frontend production build passed.
 - Contract and web view-model tests passed.
-- Backend tests: `9 passed`.
+- Backend tests: `15 passed in 0.58s`.
+- GitHub Actions CI run `27494987041`: success.
+- GitHub Pages workflow run `27495044194`: success.
+- Secret-pattern scan returned no matches for Slack/OpenAI/GitHub token patterns or the sandbox password.
 
 ## Demo And Submission Artifacts
 
-- Local video: `assets/demo-video/slacksync-demo.mp4`
-- Video duration: `75.288` seconds
+- Local video: `assets/demo-video/slacksync-demo-v2.mp4`
+- Video duration: `75.8` seconds
 - Voice: Edge TTS `en-US-AndrewNeural`
 - Video renderer: `scripts/render_demo_video.py`
 - Backup public video asset: `https://github.com/AtchayamG/slacksync/releases/download/demo-v1/slacksync-demo.mp4`
 - Architecture diagram: `assets/diagrams/architecture.png`
+- Live judge console: `https://atchayamg.github.io/slacksync/`
+- YouTube video: `https://youtu.be/rHMgZBfL3PI`
 - Devpost copy: `docs/06-demo-submission/devpost-submission-draft.md`
 - Evidence checklist: `docs/06-demo-submission/submission-evidence-checklist.md`
 
-## Known Blockers
+## Current Submission State
 
-1. Devpost video field requires YouTube, Vimeo, Facebook Video, or Youku. The GitHub release URL is a backup only.
-2. YouTube Studio upload dialog opened, but Chrome automation file attachment returned `Not allowed`. Manual upload path:
-
-```text
-D:\Work\Codex\Hackathon Projects\Slack Agent\assets\demo-video\slacksync-demo.mp4
-```
-
-3. Devpost architecture upload still needs `assets/diagrams/architecture.png`.
-4. Final Devpost submit should remain human-controlled after the video URL and architecture upload are confirmed.
+1. Devpost project overview, project details, and Additional Info have been saved.
+2. User manually uploaded `assets/diagrams/architecture.png` and saved Additional Info.
+3. Codex verified the Devpost finalization page is visible with the terms checkbox and `Submit project` button.
+4. Final Devpost submit remains human-controlled. Codex did not click submit.
 
 ## Review Priorities For Claude
 
 1. Audit README and docs for truthful claims only.
 2. Review UI/UX for judge impact and fix any obvious alignment or copy issues.
-3. Check that demo video slides are readable and match the actual app.
-4. Verify Devpost text clearly maps to New Slack Agent, MCP, and Real-Time Search without overclaiming Marketplace readiness.
+3. Check that demo video `https://youtu.be/rHMgZBfL3PI` is public/playable and matches the actual app.
+4. Verify Devpost text clearly maps to New Slack Agent, MCP, and Real-Time Search without overclaiming Marketplace readiness or Organizations eligibility.
 5. Confirm no secrets are committed.
 6. Confirm local quickstart instructions work from a clean shell.
 
@@ -70,7 +73,7 @@ D:\Work\Codex\Hackathon Projects\Slack Agent\assets\demo-video\slacksync-demo.mp
 
 - Chrome and in-app Browser are available for logged-in browser work.
 - A separate installable `Computer Use` plugin was requested, but no exact install candidate appeared in the available plugin list.
-- Chrome file upload may still be blocked despite extension file URL access being enabled; use manual selection if needed.
+- Chrome file upload was previously blocked, but the user has now manually completed the architecture upload.
 
 ## Do Not Do
 

@@ -16,7 +16,7 @@
 - [ ] P0-06  Copy `.env.example` → `.env` and fill all values
 - [ ] P0-07  Set up GitHub Actions CI (lint + test on every PR)
 - [ ] P0-08  Register on Devpost for the hackathon
-- [ ] P0-09  Add `slackhack@salesforce.com` and `testing@devpost.com` to sandbox
+- [ ] P0-09  Add the required Devpost judge accounts to sandbox
 - [ ] P0-10  Configure Slack App manifest (slash commands, event subscriptions, scopes)
 
 ---
@@ -170,7 +170,7 @@
 - [R] P10-07  All 4 slash commands work end-to-end in sandbox
 - [R] P10-08  App Home renders correctly
 - [R] P10-09  CI webhook triggers Watchdog alert in Slack
-- [R] P10-10  Sandbox URL shared: `slackhack@salesforce.com` + `testing@devpost.com`
+- [R] P10-10  Sandbox URL shared with the required Devpost judge accounts
 - [R] P10-11  Final `REVIEW_LOG.md` sign-off
 - [R] P10-12  Submit on Devpost before July 13, 2026 @ 5:00 PM PDT
 

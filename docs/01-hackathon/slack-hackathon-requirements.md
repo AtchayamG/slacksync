@@ -46,7 +46,7 @@ The Organizations track requires Slack Marketplace submission before deadline an
 - Video must show the working project on the intended device/platform.
 - Architecture diagram.
 - URL to Slack developer sandbox.
-- Test access for `slackhack@salesforce.com` and `testing@devpost.com`.
+- Test access for the required judge accounts listed by Devpost.
 - Slack App ID for Organizations track if pursued.
 
 ## Judging Criteria

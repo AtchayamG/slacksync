@@ -270,8 +270,7 @@ jobs:
 Before submitting, add judges to your Slack sandbox:
 
 ```
-slackhack@salesforce.com  → invite to sandbox as full member
-testing@devpost.com       → invite to sandbox as full member
+Required Devpost judge accounts  → invite to sandbox as full members
 ```
 
 Then in your Devpost submission, provide:

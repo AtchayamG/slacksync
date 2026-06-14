@@ -14,4 +14,9 @@ build/
 Thumbs.db
 playwright-report/
 test-results/
-
+assets/demo-video/*.mp4
+assets/demo-video/*.mp3
+assets/demo-video/*.wav
+assets/demo-video/frame-*.png
+assets/demo-video/slides.txt
+assets/demo-video/web-console.png

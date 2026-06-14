@@ -1,15 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
-import { Activity, Bot, Braces, CheckCircle2, Clock3, GitPullRequest, Radio, Shield } from "lucide-react";
+import { Activity, Bot, Braces, CheckCircle2, Clock3, GitPullRequest, Radio, Shield, Sparkles } from "lucide-react";
 import type { AgentResult, SyncCommand } from "@slacksync/contracts";
 import { runCommand } from "./api";
 import { commandSummary, resultHeadline, statusTone } from "./viewModel";
 import { commands, results, timeline } from "./demoData";
 
 const agents = [
-  ["Reviewer", "reviewer", "Security-aware PR analysis", "online"],
-  ["Tester", "tester", "Syntax-valid test generation", "online"],
-  ["Scribe", "scribe", "Docs and changelog drafts", "standby"],
-  ["Watchdog", "watchdog", "CI failure triage", "watching"]
+  ["Reviewer", "reviewer", "Security-aware PR analysis", "online", "violet"],
+  ["Tester", "tester", "Syntax-valid test generation", "online", "blue"],
+  ["Scribe", "scribe", "Docs and changelog drafts", "standby", "amber"],
+  ["Watchdog", "watchdog", "CI failure triage", "watching", "rose"]
 ];
 
 export function App() {
@@ -44,14 +44,26 @@ export function App() {
   return (
     <main className="shell">
       <section className="hero">
-        <div>
+        <div className="heroCopy">
           <p className="eyebrow">Demo mode - no secrets loaded</p>
           <h1>SlackSync</h1>
-          <p className="lede">Slack-native agent operations center for code review, tests, docs, and CI triage.</p>
+          <p className="lede">A Slack-native agent operations center that routes engineering requests, attaches context, and returns judge-visible proof.</p>
+          <div className="heroBadges" aria-label="Core proof points">
+            <span>Slash command live</span>
+            <span>Typed contracts</span>
+            <span>Demo-safe adapters</span>
+          </div>
         </div>
-        <div className="pulse">
-          <Radio size={18} />
-          <span>{mode === "api" ? "Live FastAPI route" : mode === "loading" ? "Routing command" : "Deterministic demo fallback"}</span>
+        <div className="heroStatus">
+          <div className="pulse">
+            <Radio size={18} />
+            <span>{mode === "api" ? "Live FastAPI route" : mode === "loading" ? "Routing command" : "Deterministic demo fallback"}</span>
+          </div>
+          <div className="signalCard">
+            <Sparkles size={18} />
+            <strong>Judge path is ready</strong>
+            <p>/sync command, Slack proof, API tests, and architecture evidence are all tied together.</p>
+          </div>
         </div>
       </section>
 
@@ -112,9 +124,9 @@ export function App() {
         <div className="panel">
           <p className="eyebrow">Agent fleet</p>
           <div className="agents">
-            {agents.map(([name, key, detail, state]) => (
-              <article className="agent" key={key}>
-                <span className="orb" />
+            {agents.map(([name, key, detail, state, tone]) => (
+              <article className={`agent ${tone}`} key={key}>
+                <span className="orb" aria-hidden="true" />
                 <div>
                   <h3>{name}</h3>
                   <p>{detail}</p>

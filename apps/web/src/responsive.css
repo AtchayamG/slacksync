@@ -10,8 +10,12 @@
   }
 
   .hero {
-    display: grid;
     min-height: auto;
+    padding: 22px;
+  }
+
+  .heroStatus {
+    max-width: 100%;
   }
 
   .metrics {
@@ -23,6 +27,12 @@
   .metrics,
   .tabs {
     grid-template-columns: 1fr;
+  }
+
+  .heroBadges,
+  .chips {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .agent {

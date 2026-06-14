@@ -24,8 +24,8 @@ Known verification:
 - `npm run build` passed.
 - `npm run test` passed.
 - `C:\Users\Atchayam\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe -m pytest -q` passed with 15 tests.
-- Latest checked GitHub Actions CI run 27496753288 succeeded.
-- Latest checked GitHub Pages workflow run 27496753268 succeeded.
+- Latest checked GitHub Actions CI run succeeded.
+- Latest checked GitHub Pages workflow run succeeded.
 - Devpost Additional Info architecture upload was completed manually and the finalization page is visible.
 
 Your review checklist:

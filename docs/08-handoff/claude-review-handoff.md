@@ -36,8 +36,8 @@ Latest results:
 - Frontend production build passed.
 - Contract and web view-model tests passed.
 - Backend tests: `15 passed in 0.58s`.
-- Latest checked GitHub Actions CI run `27496753288`: success.
-- Latest checked GitHub Pages workflow run `27496753268`: success.
+- Latest checked GitHub Actions CI run: success.
+- Latest checked GitHub Pages workflow run: success.
 - Secret-pattern scan returned no matches for Slack/OpenAI/GitHub token patterns or the sandbox password.
 
 ## Demo And Submission Artifacts

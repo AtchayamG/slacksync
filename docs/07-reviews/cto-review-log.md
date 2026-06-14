@@ -84,4 +84,4 @@ DONE: User manually uploaded `assets/diagrams/architecture.png` in Devpost Addit
 
 NEXT: Final human or Claude review of the Devpost preview, then user-controlled final submit only if the preview is accurate and the terms checkbox is truthful.
 
-DONE: Refreshed final shared handoff docs, removed explicit judge emails from public docs, committed the handoff update, and pushed `main`. Fresh CI run `27496753288` and Pages run `27496753268` both succeeded.
+DONE: Refreshed final shared handoff docs, removed explicit judge emails from public docs, committed the handoff update, and pushed `main`. Fresh CI and Pages runs both succeeded.

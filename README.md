@@ -28,6 +28,7 @@ The web console runs at `http://127.0.0.1:5174/`. The app runs in demo mode with
 - `services/api` - FastAPI backend, Slack endpoints, agent orchestration, and demo data.
 - `packages/contracts` - shared typed contracts for frontend/backend payloads.
 - `docs` - hackathon requirements, architecture, imported docs, agent briefs, and submission checklist.
+- `docs/08-handoff` - reviewer handoff notes for Claude or another external reviewer.
 - `assets/diagrams` - submission-ready architecture diagram in SVG and PNG form.
 - `ops` - Slack app manifest and deployment configuration references.
 

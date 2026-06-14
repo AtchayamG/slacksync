@@ -13,8 +13,10 @@
 | Public repository | `https://github.com/AtchayamG/slacksync` | PASS | Codex | GitHub reports visibility `PUBLIC`, default branch `main` |
 | Open-source license | `LICENSE` | PASS | Codex | GitHub detects MIT License |
 | Architecture diagram | `assets/diagrams/architecture.png` and `.svg` | PASS | Codex | Matches Slack -> tunnel -> FastAPI -> Maestro -> MCP/RTS -> agents -> web console |
-| Demo video under 3 minutes | `https://github.com/AtchayamG/slacksync/releases/download/demo-v1/slacksync-demo.mp4` | PASS | Codex | MP4 is 99 seconds with narration; release asset is public |
+| Demo video under 3 minutes | `assets/demo-video/slacksync-demo.mp4`; backup release asset `https://github.com/AtchayamG/slacksync/releases/download/demo-v1/slacksync-demo.mp4` | PASS | Codex | MP4 is 75.288 seconds with Edge TTS `en-US-AndrewNeural`; release asset is public |
+| YouTube/Vimeo/Facebook video URL for Devpost | Pending YouTube upload of `assets/demo-video/slacksync-demo.mp4` | BLOCKED | User/Codex | YouTube Studio upload dialog opened, but Chrome file chooser returned `Not allowed`; user should manually select the MP4 or re-enable Codex extension file upload permission |
 | Project uses Agent Builder | Installed Slack app plus `/sync` agent command | PASS | Codex | Working command in sandbox with app response |
 | Project uses MCP | `services/api/app/integrations/mcp_context.py` | PASS | Codex | API result includes GitHub/Jira MCP evidence and tests assert it |
 | Project uses RTS API | `services/api/app/integrations/rts_search.py` | PASS | Codex | API result includes `#dev-agent-ops` RTS evidence and tests assert it |
-| Final Devpost submit | Confirmation page | TODO | User | Human final review |
+| Devpost architecture upload | `assets/diagrams/architecture.png` | TODO | User/Codex | Upload after Devpost file picker works; Chrome file upload currently blocked |
+| Final Devpost submit | Confirmation page | TODO | User | Human final review after YouTube URL and architecture upload |

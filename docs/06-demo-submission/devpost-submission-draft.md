@@ -36,3 +36,15 @@ Engineering teams already work in Slack. SlackSync reduces context switching acr
 ## Current Sandbox Note
 
 Slack Developer Program activation is complete. Sandbox URL: `https://slacksync-atchayam.enterprise.slack.com`. App ID: `A0BABHV4D8E`. Judge invites were sent to `slackhack@salesforce.com` and `testing@devpost.com`.
+
+## Current Artifact Links
+
+- Public repository: `https://github.com/AtchayamG/slacksync`
+- Backup demo video asset: `https://github.com/AtchayamG/slacksync/releases/download/demo-v1/slacksync-demo.mp4`
+- Architecture diagram to upload: `assets/diagrams/architecture.png`
+- Local final demo video to upload to YouTube: `assets/demo-video/slacksync-demo.mp4`
+- Latest pushed commit: `bbd23b5 Polish UI and demo video proof`
+
+## Devpost Completion Notes
+
+Devpost's video field rejects generic GitHub release video URLs and expects YouTube, Vimeo, Facebook Video, or Youku. Upload `assets/demo-video/slacksync-demo.mp4` to YouTube, then paste that URL into Devpost. The current Chrome session opened YouTube Studio and reached the upload dialog, but programmatic file attachment returned `Not allowed`; use manual file selection if the Codex Chrome extension still cannot attach files.

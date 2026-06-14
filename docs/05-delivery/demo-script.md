@@ -1,26 +1,24 @@
-# Three-Minute Demo Script
+# Demo Script
 
-## 0:00-0:20 - Hook
+Current rendered artifact: `assets/demo-video/slacksync-demo.mp4`.
 
-Show SlackSync dashboard and say: "SlackSync turns Slack into an engineering agent operations center. Review, tests, docs, and CI triage happen from one `/sync` command."
+Duration: 75.288 seconds.
 
-## 0:20-0:55 - Command Router
+Voice: Edge TTS `en-US-AndrewNeural`.
 
-Click Review, Tests, Docs, and Status in the command simulator. Show the deterministic route line and Slack thread preview updating.
+Renderer: `scripts/render_demo_video.py`.
 
-## 0:55-1:35 - Agent Workflows
+## Final Narration Arc
 
-Show Reviewer comments, Tester generated test file, Scribe changelog section, and Watchdog root cause analysis.
+1. SlackSync turns Slack into an engineering agent operations center.
+2. A single slash command routes review, tests, documentation, and CI triage to specialized agents.
+3. The live judge console mirrors the Slack workflow and calls the FastAPI command route.
+4. The Slack proof shows the installed `/sync` command responding inside the SlackSync sandbox.
+5. Maestro attaches repository context and Slack search evidence, then routes to Reviewer, Tester, Scribe, or Watchdog.
+6. The architecture maps Slack surfaces to FastAPI, typed contracts, specialized agents, and Block Kit responses.
+7. Guardrails include Slack signature verification, shared contracts, deterministic fixtures, tests, docs, public repository, and MIT license.
+8. Close with judge readiness: sandbox invited, architecture diagram ready, video under three minutes, and auditable workflow.
 
-## 1:35-2:10 - Architecture
+## Upload Note
 
-Show architecture proof: Slack surfaces -> FastAPI -> Maestro -> specialized agents -> Block Kit. Mention MCP and RTS are explicit adapter boundaries.
-
-## 2:10-2:40 - Slack Readiness
-
-Show `ops/slack-app-manifest.json`, Slack request signature tests, and `/slack/commands` route. State demo mode avoids secrets while real mode validates Slack signatures.
-
-## 2:40-3:00 - Impact
-
-Close with impact: fewer context switches, faster PR review, faster CI recovery, and auditable human-in-the-loop Slack threads.
-
+Devpost requires a YouTube, Vimeo, Facebook Video, or Youku URL. The GitHub release video is only a backup proof asset, not accepted by the Devpost video field.

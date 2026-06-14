@@ -13,6 +13,7 @@ from services.api.app.agents.watchdog.agent import run as run_watchdog
 from services.api.app.agents.watchdog.schemas import EventType, WatchdogInput
 from services.api.app.integrations.mcp_context import collect_mcp_context
 from services.api.app.integrations.rts_search import search_slack_context
+from services.api.app.slack.blockkit import format_result
 from services.api.app.slack.command_parser import parse_sync_command
 
 
@@ -58,4 +59,5 @@ def run_command(text: str) -> dict[str, Any]:
         "mcp": _to_camel([artifact.__dict__ for artifact in collect_mcp_context(parsed.command, parsed.target)]),
         "rts": _to_camel([hit.__dict__ for hit in search_slack_context(parsed.command, parsed.target)]),
     }
+    payload["blocks"] = format_result(payload)
     return {"parsed": parsed.__dict__, "result": payload}

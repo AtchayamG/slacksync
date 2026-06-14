@@ -350,3 +350,103 @@ h3 {
 .agent.rose .orb {
   background: var(--red);
 }
+
+.analytics {
+  width: min(1240px, 100%);
+  margin: 0 auto 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.barChart {
+  display: grid;
+  gap: 14px;
+  padding-top: 4px;
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: 86px 1fr 40px;
+  align-items: center;
+  gap: 12px;
+}
+
+.barLabel {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.barTrack {
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.7s ease;
+}
+
+.barValue {
+  text-align: right;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.donutWrap {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.donutSvg {
+  width: 160px;
+  height: 160px;
+}
+
+.donutTop {
+  fill: var(--text);
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.donutSub {
+  fill: var(--muted);
+  font-size: 13px;
+}
+
+.donutLegend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.donutLegend li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+}
+
+.legendLabel {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.legendPct {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}

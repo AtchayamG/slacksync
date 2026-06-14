@@ -20,3 +20,5 @@ assets/demo-video/*.wav
 assets/demo-video/frame-*.png
 assets/demo-video/slides.txt
 assets/demo-video/web-console.png
+assets/demo-video/_*.png
+assets/demo-video/mseg*.mp4

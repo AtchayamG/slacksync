@@ -47,3 +47,23 @@ BLOCKED: Devpost final submission still needs a YouTube/Vimeo/Facebook/Youku vid
 RISK: Slack app/tunnel proof depends on `https://slacksync-atchayam.loca.lt` continuing to route to the local FastAPI server. If restarted, Slack command URL may need updating.
 
 NEXT: Claude/another reviewer should audit production polish, README honesty, Devpost text, test instructions, and any final UI/detail improvements before final submission.
+
+## 2026-06-14 (Claude review + upgrade)
+
+DONE: Added a Slack Block Kit formatter layer (`services/api/app/slack/blockkit.py`) so agent results render as Block Kit blocks; wired it into the Maestro result and `/slack/commands`. Added 6 formatter unit tests. Backend now reports `15 passed`.
+
+DONE: Added GitHub Actions CI (`.github/workflows/ci.yml`): backend pytest, frontend build + test, and a secret-pattern scan on every push and PR.
+
+DONE: Made the web console deployable as a public judge link. It already falls back to deterministic demo data when no API is present; set Vite `base: "./"` and added `.github/workflows/pages.yml` to publish the console to GitHub Pages.
+
+DONE: Upgraded the demo video to `assets/demo-video/slacksync-demo-v2.mp4` using the existing narration: crossfade transitions between slides; captions removed since YouTube provides closed captions. Duration 75.8s, 1280x720, under three minutes. v1 retained as backup.
+
+FIXED: Corrected stale `services/api/app/demo_data.py` proof state that still said the sandbox was blocked and the repo pending; now reflects the live sandbox and public MIT repo.
+
+DONE: Rewrote `README.md` and `docs/06-demo-submission/devpost-submission-draft.md` for stronger, truthful judge framing mapped to New Slack Agent + MCP + RTS, with no Marketplace overclaim.
+
+NOTE: Temporary `_check_*.png` frames were written into `assets/demo-video/` during video verification and could not be deleted in this environment. Delete them before committing (do not `git add` them).
+
+NEXT (human/external): Upload `slacksync-demo-v2.mp4` to YouTube as Public and paste the URL into Devpost; enable GitHub Pages; upload the architecture diagram; final human Devpost submit.
+
+DONE: Rebuilt the "Live console for judges" video slide to feature the new dashboard analytics (agent-readiness bar chart and /sync command-mix donut), so the demo video now reflects the upgraded UI. Final video `assets/demo-video/slacksync-demo-v2.mp4`, 75.8s, 1280x720, no burned captions, crossfade transitions.

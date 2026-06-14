@@ -61,4 +61,9 @@ async def slack_commands(
     form = await request.form()
     text = f"/sync {form.get('text', '')}".strip()
     result = run_command(text)
-    return {"response_type": "ephemeral", "text": result["result"]["summary"]}
+    payload = result["result"]
+    return {
+        "response_type": "ephemeral",
+        "text": payload["summary"],
+        "blocks": payload.get("blocks", []),
+    }

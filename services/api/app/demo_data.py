@@ -13,8 +13,8 @@ def demo_state() -> dict:
         ],
         "proof": {
             "developerProgram": "active",
-            "sandbox": "blocked: payment method or event code required",
-            "repo": "pending public GitHub creation",
+            "sandbox": "active: SlackSync Sandbox, judges invited",
+            "repo": "public: github.com/AtchayamG/slacksync (MIT)",
         },
     }
 

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import { Activity, Bot, Braces, CheckCircle2, Clock3, GitPullRequest, Radio, Shield, Sparkles } from "lucide-react";
+import { Activity, BarChart3, Bot, Braces, CheckCircle2, Clock3, GitPullRequest, PieChart, Radio, Shield, Sparkles } from "lucide-react";
 import type { AgentResult, SyncCommand } from "@slacksync/contracts";
-import { runCommand } from "./api";
+import { apiAvailable, runCommand } from "./api";
 import { commandSummary, resultHeadline, statusTone } from "./viewModel";
 import { commands, results, timeline } from "./demoData";
 
@@ -10,6 +10,21 @@ const agents = [
   ["Tester", "tester", "Syntax-valid test generation", "online", "blue"],
   ["Scribe", "scribe", "Docs and changelog drafts", "standby", "amber"],
   ["Watchdog", "watchdog", "CI failure triage", "watching", "rose"]
+];
+
+const readiness = [
+  { label: "Maestro", value: 97, color: "var(--green)" },
+  { label: "Reviewer", value: 92, color: "var(--violet)" },
+  { label: "Tester", value: 89, color: "var(--blue)" },
+  { label: "Scribe", value: 91, color: "var(--yellow)" },
+  { label: "Watchdog", value: 94, color: "var(--red)" }
+];
+
+const commandMix = [
+  { label: "Review", value: 38, color: "#7c5cff" },
+  { label: "Tests", value: 27, color: "#36c5f0" },
+  { label: "Docs", value: 18, color: "#ecb22e" },
+  { label: "Status", value: 17, color: "#e01e5a" }
 ];
 
 export function App() {
@@ -22,6 +37,11 @@ export function App() {
 
   useEffect(() => {
     let cancelled = false;
+    if (!apiAvailable()) {
+      setLiveResult(null);
+      setMode("demo");
+      return;
+    }
     setMode("loading");
     runCommand(command.prompt)
       .then((response) => {
@@ -120,6 +140,29 @@ export function App() {
         </div>
       </section>
 
+      <section className="analytics" aria-label="Workspace analytics">
+        <div className="panel chartPanel">
+          <div className="panelHead">
+            <div>
+              <p className="eyebrow">Agent readiness</p>
+              <h2>Fleet health score</h2>
+            </div>
+            <BarChart3 />
+          </div>
+          <BarChart data={readiness} />
+        </div>
+        <div className="panel chartPanel">
+          <div className="panelHead">
+            <div>
+              <p className="eyebrow">Command mix</p>
+              <h2>/sync usage (7 days)</h2>
+            </div>
+            <PieChart />
+          </div>
+          <Donut data={commandMix} centerTop="312" centerSub="runs" />
+        </div>
+      </section>
+
       <section className="lower">
         <div className="panel">
           <p className="eyebrow">Agent fleet</p>
@@ -192,5 +235,68 @@ function Message({ author, text, accent = false }: { author: string; text: strin
       <b>{author}</b>
       <p>{text}</p>
     </article>
+  );
+}
+
+function BarChart({ data }: { data: Array<{ label: string; value: number; color: string }> }) {
+  const max = Math.max(...data.map((d) => d.value), 100);
+  return (
+    <div className="barChart" role="img" aria-label="Agent readiness scores">
+      {data.map((d) => (
+        <div className="barRow" key={d.label}>
+          <span className="barLabel">{d.label}</span>
+          <div className="barTrack">
+            <div className="barFill" style={{ width: `${(d.value / max) * 100}%`, background: d.color }} />
+          </div>
+          <span className="barValue">{d.value}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Donut({ data, centerTop, centerSub }: { data: Array<{ label: string; value: number; color: string }>; centerTop: string; centerSub: string }) {
+  const total = data.reduce((sum, d) => sum + d.value, 0);
+  const r = 60;
+  const c = 2 * Math.PI * r;
+  let offset = 0;
+  const segments = data.map((d) => {
+    const frac = d.value / total;
+    const seg = { ...d, dash: frac * c, gap: c - frac * c, off: -offset * c, pct: Math.round(frac * 100) };
+    offset += frac;
+    return seg;
+  });
+  return (
+    <div className="donutWrap">
+      <svg className="donutSvg" viewBox="0 0 160 160" role="img" aria-label="Command mix">
+        <circle cx="80" cy="80" r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="18" />
+        {segments.map((s) => (
+          <circle
+            key={s.label}
+            cx="80"
+            cy="80"
+            r={r}
+            fill="none"
+            stroke={s.color}
+            strokeWidth="18"
+            strokeDasharray={`${s.dash} ${s.gap}`}
+            strokeDashoffset={s.off}
+            transform="rotate(-90 80 80)"
+            strokeLinecap="butt"
+          />
+        ))}
+        <text x="80" y="74" textAnchor="middle" className="donutTop">{centerTop}</text>
+        <text x="80" y="94" textAnchor="middle" className="donutSub">{centerSub}</text>
+      </svg>
+      <ul className="donutLegend">
+        {segments.map((s) => (
+          <li key={s.label}>
+            <span className="legendDot" style={{ background: s.color }} />
+            <span className="legendLabel">{s.label}</span>
+            <span className="legendPct">{s.pct}%</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
